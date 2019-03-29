@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.learn.example.mapper.PayInstructMapper" >
+  <resultMap id="BaseResultMap" type="com.learn.example.model.PayInstruct" >
+    <id column="pay_instruct_no" property="payInstructNo" jdbcType="VARCHAR" />
+    <result column="pay_order_No" property="payOrderNo" jdbcType="VARCHAR" />
+    <result column="out_trade_no" property="outTradeNo" jdbcType="VARCHAR" />
+    <result column="app_id" property="appId" jdbcType="VARCHAR" />
+    <result column="trace_id" property="traceId" jdbcType="VARCHAR" />
+    <result column="platform_id" property="platformId" jdbcType="VARCHAR" />
+    <result column="ms_uid" property="msUid" jdbcType="VARCHAR" />
+    <result column="ms_org" property="msOrg" jdbcType="VARCHAR" />
+    <result column="pay_channel" property="payChannel" jdbcType="INTEGER" />
+    <result column="pay_product" property="payProduct" jdbcType="INTEGER" />
+    <result column="pay_product_type" property="payProductType" jdbcType="INTEGER" />
+    <result column="bank" property="bank" jdbcType="VARCHAR" />
+    <result column="amt" property="amt" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <insert id="insert" parameterType="com.learn.example.model.PayInstruct" >
+    insert into pay_instruct (pay_instruct_no, pay_order_No, out_trade_no, 
+      app_id, trace_id, platform_id, 
+      ms_uid, ms_org, pay_channel, 
+      pay_product, pay_product_type, bank, 
+      amt, create_time)
+    values (#{payInstructNo,jdbcType=VARCHAR}, #{payOrderNo,jdbcType=VARCHAR}, #{outTradeNo,jdbcType=VARCHAR}, 
+      #{appId,jdbcType=VARCHAR}, #{traceId,jdbcType=VARCHAR}, #{platformId,jdbcType=VARCHAR}, 
+      #{msUid,jdbcType=VARCHAR}, #{msOrg,jdbcType=VARCHAR}, #{payChannel,jdbcType=INTEGER}, 
+      #{payProduct,jdbcType=INTEGER}, #{payProductType,jdbcType=INTEGER}, #{bank,jdbcType=VARCHAR}, 
+      #{amt,jdbcType=INTEGER}, #{createTime,jdbcType=VARCHAR})
+  </insert>
+
+</mapper>

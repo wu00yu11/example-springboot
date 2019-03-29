@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.learn.example.mapper.PayOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.learn.example.model.PayOrder" >
+    <id column="pay_order_no" property="payOrderNo" jdbcType="VARCHAR" />
+    <result column="out_trade_no" property="outTradeNo" jdbcType="VARCHAR" />
+    <result column="app_id" property="appId" jdbcType="VARCHAR" />
+    <result column="platform_id" property="platformId" jdbcType="VARCHAR" />
+    <result column="trace_id" property="traceId" jdbcType="VARCHAR" />
+    <result column="ms_uid" property="msUid" jdbcType="VARCHAR" />
+    <result column="ms_org" property="msOrg" jdbcType="VARCHAR" />
+    <result column="merchant_uid_lt" property="merchantUidLt" jdbcType="VARCHAR" />
+    <result column="good_lt" property="goodLt" jdbcType="VARCHAR" />
+    <result column="pay_type" property="payType" jdbcType="INTEGER" />
+    <result column="account_amt" property="accountAmt" jdbcType="INTEGER" />
+    <result column="pay_product" property="payProduct" jdbcType="VARCHAR" />
+    <result column="pay_product_amt" property="payProductAmt" jdbcType="INTEGER" />
+    <result column="bank" property="bank" jdbcType="VARCHAR" />
+    <result column="pay_amt" property="payAmt" jdbcType="INTEGER" />
+    <result column="refunding_total_amt" property="refundingTotalAmt" jdbcType="INTEGER" />
+    <result column="refunded_total_amt" property="refundedTotalAmt" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="pay_time" property="payTime" jdbcType="TIMESTAMP" />
+    <result column="close_time" property="closeTime" jdbcType="TIMESTAMP" />
+    <result column="pay_status" property="payStatus" jdbcType="INTEGER" />
+    <result column="version" property="version" jdbcType="INTEGER" />
+  </resultMap>
+
+  <insert id="insert" parameterType="com.learn.example.model.PayOrder" >
+    insert into pay_order (pay_order_no, out_trade_no, app_id, 
+      platform_id, trace_id, ms_uid, 
+      ms_org, merchant_uid_lt, good_lt, 
+      pay_type, account_amt, pay_product, 
+      pay_product_amt, bank, pay_amt, 
+      refunding_total_amt, refunded_total_amt, create_time, 
+      update_time, pay_time, close_time, 
+      pay_status, version)
+    values (#{payOrderNo,jdbcType=VARCHAR}, #{outTradeNo,jdbcType=VARCHAR}, #{appId,jdbcType=VARCHAR}, 
+      #{platformId,jdbcType=VARCHAR}, #{traceId,jdbcType=VARCHAR}, #{msUid,jdbcType=VARCHAR}, 
+      #{msOrg,jdbcType=VARCHAR}, #{merchantUidLt,jdbcType=VARCHAR}, #{goodLt,jdbcType=VARCHAR}, 
+      #{payType,jdbcType=INTEGER}, #{accountAmt,jdbcType=INTEGER}, #{payProduct,jdbcType=VARCHAR}, 
+      #{payProductAmt,jdbcType=INTEGER}, #{bank,jdbcType=VARCHAR}, #{payAmt,jdbcType=INTEGER}, 
+      #{refundingTotalAmt,jdbcType=INTEGER}, #{refundedTotalAmt,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{payTime,jdbcType=TIMESTAMP}, #{closeTime,jdbcType=TIMESTAMP}, 
+      #{payStatus,jdbcType=INTEGER}, #{version,jdbcType=INTEGER})
+  </insert>
+
+</mapper>
