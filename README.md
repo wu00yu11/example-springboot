@@ -1,10 +1,28 @@
-## app-pay 项目说明文档
+##项目说明文档
 ### 1. 项目结构
 <pre>
-
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─com
+    │  │      └─learn
+    │  │          └─example
+    │  │              ├─common
+    │  │              │  └─exception
+    │  │              ├─controller
+    │  │              ├─mapper
+    │  │              ├─model
+    │  │              ├─service
+    │  │              └─vo
+    │  └─resources
+    │      └─config
+    │          ├─h2
+    │          └─mybatis
+    └─test
+        └─java
 </pre>
 
-工程为父子结构,基于springboot框架实现,整合过程中遇到的问题及解决方式:
+基于springboot框架实现,整合过程中遇到的问题及解决方式:
 - springboot依赖包替换指定版本, 业务使用中,我们都希望使用尽可能稳定的或者熟悉的版本,为了项目运行稳定。
     ```xml
       <properties>
